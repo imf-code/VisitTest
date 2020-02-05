@@ -3,69 +3,43 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>Weather Test</title>
 
 </head>
 <body>
     <script src="./component.js"></script>
 
+    <style>
+        body {
+            background-color: lightgrey;
+        }
+
+        .button {
+            font-size: 200%
+        }
+    </style>
+
     <script>
-        let options = {
-            location: {
-                lat: 60.1699,
-                long: 24.9384
-            },
-            time: {
-                start: 1580741580000,
-                stop: 1580741580000
-            }
-        };
-        console.log(options);
-
-        var turku = true;
-
-        function fetchtemp() {
+        function changeoptions(lati, longi) {
+            let options = {
+                location: {
+                    lat: lati,
+                    long: longi
+                },
+                time: {
+                    start: 1580741580000,
+                    stop: 1580741580000
+                }
+            };
             let component = document.querySelector("my-element");
             component.options = options;
         }
 
-        function changeoptions() {
-            let component = document.querySelector("my-element");
-            if (turku) {
-                options = {
-                    location: {
-                        lat: 60.1699,
-                        long: 24.9384
-                    },
-                    time: {
-                        start: 1580741580000,
-                        stop: 1580741580000
-                    }
-                };
-                component.options = options;
-                console.log(component.options.location.long);
-                turku = false;
-            }
-            else {
-                options = {
-                    location: {
-                        lat: 60.4518,
-                        long: 22.2666
-                    },
-                    time: {
-                        start: 1580741580000,
-                        stop: 1580741580000
-                    }
-                };
-                component.options = options;
-                turku = true;
-            }
-        }
     </script>
 
     <my-element></my-element>
-    <div id="asdf"></div><br />
-    <button type="button" onclick="fetchtemp()">Start!</button>
-    <button type="button" onclick="changeoptions()">Change</button>
+    <br />
+    <button class="button" type="button" onclick="changeoptions(60.1699, 24.9384)">Helsinki</button>
+    <button class="button" type="button" onclick="changeoptions(60.4518, 22.2666)">Turku</button>
 </body>
 </html>

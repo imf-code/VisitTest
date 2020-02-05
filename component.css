@@ -1,0 +1,47 @@
+﻿/* Style sheet for weather display component */
+
+/* Universal settings */
+#box {
+    background-color: darkgrey;
+    color: black;
+    text-align: center;
+    margin: auto;
+    padding: 1%;
+    border-radius: 15px;
+    resize: both;
+    overflow: hidden;
+    overflow-wrap: break-word;
+}
+
+/* Mobile settings */
+@media screen and (max-width: 1080px) {
+    #maintext {
+        font-size: 300%;
+    }
+
+    #header {
+        font-size: 500%;
+    }
+
+    #box {
+        background-color: indianred;
+        width: auto;
+        font-size: 100%;
+    }
+}
+
+/* PC settings */
+@media screen and (min-width: 1080px) {
+    #maintext {
+        font-size: 16px;
+    }
+
+    #header {
+        font-size: 24px;
+    }
+
+    #box {
+        width: 300px;
+        font-size: 16px;
+    }
+}

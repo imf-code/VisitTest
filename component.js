@@ -40,8 +40,13 @@ class WeatherDisplay extends HTMLElement {
     async GETWeather(options, callback) {
         let api = "https://snapshot-api.visit.fi/heliotron/weather/forecast/";
         let resource = api + String(options.location.lat) + "," + String(options.location.long) + "," + String(Math.floor(Date.now() / 1000)) + "?exclude=hourly,daily,flags&units=si";
-        let promise = await fetch(resource);
-        let response = await promise.json();
+        try {
+            let promise = await fetch(resource);
+            var response = await promise.json();
+        }
+        catch{
+            this.TextDisplay("Error contacting api.")
+        }
         callback(response, this);
     }
 

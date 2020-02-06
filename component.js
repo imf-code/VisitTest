@@ -53,7 +53,7 @@ class WeatherDisplay extends HTMLElement {
     // Display temperature
     DisplayTemp(response, self) {
         let maintext = self.shadowRoot.getElementById('maintext');
-        maintext.innerHTML = "Latitude: " + response.latitude + "<br>" + "Longitude: " + response.longitude + "<br>" + "Temperature: " + response.currently.temperature + "&#176;C";
+        maintext.innerHTML = "Temperature: " + response.currently.temperature + "&#176;C" + "<br>" + "@ " + response.latitude + "&#176; N, " + response.longitude + "&#176; E<br>";
     }
 
     // Display loading visual

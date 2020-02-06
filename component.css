@@ -15,24 +15,25 @@
 
 /* Mobile settings */
 @media screen and (max-width: 1080px) {
-    #maintext {
-        font-size: 300%;
+    #box {
+        background-color: indianred;
+        width: auto;
+        font-size: 100%;
     }
 
     #header {
         font-size: 500%;
     }
 
-    #box {
-        background-color: indianred;
-        width: auto;
-        font-size: 100%;
+    #maintext {
+        font-size: 300%;
     }
 }
 
 /* PC settings */
 @media screen and (min-width: 1080px) {
-    #maintext {
+    #box {
+        width: 300px;
         font-size: 16px;
     }
 
@@ -40,8 +41,7 @@
         font-size: 24px;
     }
 
-    #box {
-        width: 300px;
+    #maintext {
         font-size: 16px;
     }
 }
